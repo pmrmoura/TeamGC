@@ -76,6 +76,7 @@ struct SearchBox: View {
         NavigationLink(
             destination: WaitingRoomView(item: Search(text: searchText), isRootViewActive: $isRootViewActive), isActive: $isRootViewActive) {
             Text("Checar")
+                .frame(width: 150)
                 .padding()
                 .padding(.horizontal, 40)
                 .background(Color.primaryColor)
