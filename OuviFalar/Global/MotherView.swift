@@ -9,18 +9,25 @@ import SwiftUI
 
 struct MotherView : View {
     
-    @EnvironmentObject var toggle: OnboardingToggle
+//    @EnvironmentObject var toggle: OnboardingToggle
 //    var user = User() se for fazer configuracao de usuario
-    
+    @StateObject var toggle = OnboardingToggle()
     var body: some View {
-        VStack {
-            if toggle.currentPage == "Onboarding" {
-                OnboardView()
-            } else if toggle.currentPage == "Search" {
-//                ContentView().environmentObject(user)
-                SearchView()
+        NavigationView {
+            VStack {
+                if toggle.currentPage == "Onboarding" {
+                    OnboardView()
+                } else if toggle.currentPage == "Search" {
+    //                ContentView().environmentObject(user)
+                    SearchView()
+                }
             }
         }
+        .environmentObject(toggle)
+        .navigationBarTitle("") //this must be empty
+        .navigationBarHidden(true)
+        .navigationBarBackButtonHidden(true)
+        .edgesIgnoringSafeArea([.top, .bottom])
     }
 }
 

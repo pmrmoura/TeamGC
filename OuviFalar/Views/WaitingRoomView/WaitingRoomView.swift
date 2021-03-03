@@ -12,22 +12,14 @@ struct WaitingRoomView: View {
     
     var body: some View {
         VStack{
+            
             NavigationLink(
                 destination: ResultView(item: item),
                 isActive: $item.isConcluded){
                     EmptyView()
                 }
             .navigationBarBackButtonHidden(true)
-            
-            HStack {
-                Text("Estamos procurando...")
-                    .font(.title)
-                    .bold()
-                Spacer()
-            }
-            .padding(.top, 30)
-            .padding()
-            
+            .navigationBarTitle("Checando...")
             
             Text("\"\(item.text)\"")
                 .font(.title2)
@@ -37,6 +29,7 @@ struct WaitingRoomView: View {
                 .background(Color(.systemGray6))
                 .cornerRadius(10)
                 .padding(.horizontal, 40)
+                .padding(.top, 32)
             
             
             Spacer()

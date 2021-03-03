@@ -18,23 +18,8 @@ struct SearchView: View {
     let textField = UITextView()
     
     var body: some View {
-        
-        
         ZStack(alignment: .bottom){
             VStack{
-                HStack(){
-                    
-                Text("Pesquisa")
-                    .font(.largeTitle)
-                    .fontWeight(.bold)
-                    .multilineTextAlignment(.leading)
-                    .padding(.leading)
-                    
-                Spacer()
-                    
-                }
-            
-                
                 SelectCategory(isPickerShown: $isPickerShown, selectedCategory: $selectedCategory, category: category)
                 Spacer()
                 SearchBox(searchText: $searchText)
@@ -82,7 +67,6 @@ struct SearchBox: View {
             .border(Color(.systemGray3))
             .padding(.horizontal)
             .frame(height: 300)
-            
         NavigationLink(destination: WaitingRoomView(item: Search(text: searchText))){
             Text("Checar")
                 .padding()
@@ -94,7 +78,7 @@ struct SearchBox: View {
         }
         .padding(.top)
         .disabled(searchText.isEmpty)
-//        .navigationBarHidden(true)
+        .navigationBarTitle("Pesquisa")
         .navigationBarBackButtonHidden(true)
         Spacer()
     }
