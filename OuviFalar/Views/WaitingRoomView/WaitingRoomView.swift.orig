@@ -12,14 +12,29 @@ struct WaitingRoomView: View {
     @Binding var isRootViewActive: Bool
     var body: some View {
         VStack{
+            
             NavigationLink(
                 destination: ResultView(item: item, isRootViewActive: $isRootViewActive),
                 isActive: $item.isConcluded){
                     EmptyView()
                 }
-            .navigationTitle("Procurando")
+<<<<<<< HEAD
             .navigationBarBackButtonHidden(true)
-
+            .navigationBarTitle("Checando...")
+=======
+            .isDetailLink(false)
+            
+            HStack {
+                Text("Estamos procurando...")
+                    .font(.title)
+                    .bold()
+                Spacer()
+            }
+            .padding(.top, 30)
+            .padding()
+            
+>>>>>>> 7492b6e1d3e59ab02c23b96d8aa3e1f98bda41cd
+            
             Text("\"\(item.text)\"")
                 .font(.title2)
                 .italic()

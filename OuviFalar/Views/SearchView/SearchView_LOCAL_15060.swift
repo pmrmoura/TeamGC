@@ -12,7 +12,6 @@ struct SearchView: View {
     @State var searchText: String = ""
     @State private var selectedCategory = 0
     @State private var isPickerShown: Bool = false
-    @State var isActive: Bool = false
 
     var category = ["Cloroquina", "Vacina", "Covid"]
    
@@ -23,7 +22,7 @@ struct SearchView: View {
             VStack{
                 SelectCategory(isPickerShown: $isPickerShown, selectedCategory: $selectedCategory, category: category)
                 Spacer()
-                SearchBox(searchText: $searchText, isRootViewActive: $isActive)
+                SearchBox(searchText: $searchText)
                     .padding(.bottom)
             }
             .modifier(MainModifier(isPickerShown: $isPickerShown))
@@ -38,9 +37,7 @@ struct SearchView: View {
             }
             .modifier(PickerStackModifier(isPickerShown: $isPickerShown))
         }
-        .onAppear(perform: {
-            searchText = ""
-        })
+
     }
     
 }
@@ -56,8 +53,6 @@ struct WaitingView: View {
 
 struct SearchBox: View {
     @Binding var searchText: String
-    @Binding var isRootViewActive: Bool
-
     var body: some View {
         HStack(){
             Text("O que tu ouviu falar?")
@@ -72,9 +67,7 @@ struct SearchBox: View {
             .border(Color(.systemGray3))
             .padding(.horizontal)
             .frame(height: 300)
-            
-        NavigationLink(
-            destination: WaitingRoomView(item: Search(text: searchText), isRootViewActive: $isRootViewActive), isActive: $isRootViewActive) {
+        NavigationLink(destination: WaitingRoomView(item: Search(text: searchText))){
             Text("Checar")
                 .padding()
                 .padding(.horizontal, 40)
@@ -85,7 +78,8 @@ struct SearchBox: View {
         }
         .padding(.top)
         .disabled(searchText.isEmpty)
-        .navigationTitle("Pesquisa")
+        .navigationBarTitle("Pesquisa")
+        .navigationBarBackButtonHidden(true)
         Spacer()
     }
 }

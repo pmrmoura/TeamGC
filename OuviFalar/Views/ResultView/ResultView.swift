@@ -19,7 +19,7 @@ struct ResultView: View {
     var isInformationFromSharedExtension: Bool = false
 
     var body: some View {
-        VStack{
+        VStack {
             if item.information == .info{
                 PositiveResultCard(searchText: item.text)
                     .padding()
@@ -66,7 +66,9 @@ struct ResultView: View {
 //            let userDefaults = UserDefaults(suiteName: "group.br.ufpe.academy.OuviFalar")
 //            userDefaults?.setValue("", forKey: "start-text-key")
         }
-        .navigationBarHidden(true)
+//        .navigationBarHidden(true)
+        .navigationTitle("Resultado")
+        .navigationBarBackButtonHidden(true)
     }
 }
 

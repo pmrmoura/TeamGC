@@ -19,6 +19,8 @@
 		0CD0B4F3257AC8EF00F2005E /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CD0B4F2257AC8EF00F2005E /* OnboardingView.swift */; };
 		0CD0B4F6257AC90700F2005E /* ResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CD0B4F5257AC90700F2005E /* ResultView.swift */; };
 		0CD0B4FA257AC96C00F2005E /* WaitingRoomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CD0B4F9257AC96C00F2005E /* WaitingRoomView.swift */; };
+		170986C325EFC1A800DF1406 /* MotherView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 170986C225EFC1A800DF1406 /* MotherView.swift */; };
+		170986C725EFC1E400DF1406 /* OnboardingToggle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 170986C625EFC1E400DF1406 /* OnboardingToggle.swift */; };
 		353EDF6B257DC67A00A2D528 /* TweetIntentClassifier.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 353EDF6A257DC67A00A2D528 /* TweetIntentClassifier.mlmodel */; };
 		353EDF6C257DC67A00A2D528 /* TweetIntentClassifier.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 353EDF6A257DC67A00A2D528 /* TweetIntentClassifier.mlmodel */; };
 		353EDF70257DC68000A2D528 /* TweetDesinfoClassifier.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 353EDF6F257DC68000A2D528 /* TweetDesinfoClassifier.mlmodel */; };
@@ -81,6 +83,8 @@
 		0CD0B4F2257AC8EF00F2005E /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
 		0CD0B4F5257AC90700F2005E /* ResultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultView.swift; sourceTree = "<group>"; };
 		0CD0B4F9257AC96C00F2005E /* WaitingRoomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaitingRoomView.swift; sourceTree = "<group>"; };
+		170986C225EFC1A800DF1406 /* MotherView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MotherView.swift; sourceTree = "<group>"; };
+		170986C625EFC1E400DF1406 /* OnboardingToggle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingToggle.swift; sourceTree = "<group>"; };
 		353EDF65257DC5FA00A2D528 /* ClassifierPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = ClassifierPlayground.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		353EDF6A257DC67A00A2D528 /* TweetIntentClassifier.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = TweetIntentClassifier.mlmodel; sourceTree = "<group>"; };
 		353EDF6F257DC68000A2D528 /* TweetDesinfoClassifier.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = TweetDesinfoClassifier.mlmodel; sourceTree = "<group>"; };
@@ -244,6 +248,7 @@
 				0CCC36D1257AC73700FD0454 /* AppDelegate.swift */,
 				0CAEB278257ACA82003091FC /* SearchingBank.swift */,
 				0CCC36D3257AC73700FD0454 /* SceneDelegate.swift */,
+				170986C225EFC1A800DF1406 /* MotherView.swift */,
 				C1AC2F0025EE643400502881 /* Modifiers */,
 			);
 			path = Global;
@@ -261,6 +266,7 @@
 			isa = PBXGroup;
 			children = (
 				C1AC2F0125EE645C00502881 /* History.swift */,
+				170986C625EFC1E400DF1406 /* OnboardingToggle.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -369,6 +375,7 @@
 			files = (
 				C1AC2F0225EE645C00502881 /* History.swift in Sources */,
 				0CCC36D2257AC73700FD0454 /* AppDelegate.swift in Sources */,
+				170986C725EFC1E400DF1406 /* OnboardingToggle.swift in Sources */,
 				C1AC2EED25EE612D00502881 /* MainModifier.swift in Sources */,
 				0CCC36D4257AC73700FD0454 /* SceneDelegate.swift in Sources */,
 				353EDF70257DC68000A2D528 /* TweetDesinfoClassifier.mlmodel in Sources */,
@@ -384,6 +391,7 @@
 				ACFC5E94257AD73B00881712 /* NegativeResultCard.swift in Sources */,
 				35DACB12257C2E6D009D4A60 /* View+ResignKeyboard.swift in Sources */,
 				0CCC36D9257AC73700FD0454 /* OuviFalar.xcdatamodeld in Sources */,
+				170986C325EFC1A800DF1406 /* MotherView.swift in Sources */,
 				0CAEB279257ACA82003091FC /* SearchingBank.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
