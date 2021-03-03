@@ -67,7 +67,7 @@ class ShareViewController: UIViewController, ShareViewDelegate {
     
     func changeView() {
         print("Changed View")
-        let resultView = UIHostingController(rootView: ResultView(item: searchItem!, isRootViewActive: .constant(false)))
+        let resultView = UIHostingController(rootView: ResultView(item: searchItem!, isRootViewActive: .constant(false), isInformationFromSharedExtension: true))
         self.addChild(resultView)
         resultView.view.translatesAutoresizingMaskIntoConstraints = false
         

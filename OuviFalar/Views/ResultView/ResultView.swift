@@ -15,6 +15,8 @@ struct ResultView: View {
     @State private var isShareSheetShowing = false
     
     @Binding var isRootViewActive: Bool
+    
+    var isInformationFromSharedExtension: Bool = false
 
     var body: some View {
         VStack{
@@ -46,16 +48,18 @@ struct ResultView: View {
                 .cornerRadius(8)
                 .shadow(radius: 2, x:0, y:1)
                 
-                Button(action: { self.isRootViewActive = false }, label: {
-                    Text("Fazer nova checagem")
-                        .fontWeight(.medium)
-                })
-                .foregroundColor(.black)
-                .frame(width: 250, height: 60)
-                .background(Color("lightGray2"))
-                .cornerRadius(8)
-                .shadow(color: .gray, radius: 2, x: 0, y: 1)
-                .padding(.top, 12)
+                if (!isInformationFromSharedExtension) {
+                    Button(action: { self.isRootViewActive = false }, label: {
+                        Text("Fazer nova checagem")
+                            .fontWeight(.medium)
+                    })
+                    .foregroundColor(.black)
+                    .frame(width: 250, height: 60)
+                    .background(Color("lightGray2"))
+                    .cornerRadius(8)
+                    .shadow(color: .gray, radius: 2, x: 0, y: 1)
+                    .padding(.top, 12)
+                }
             }
         }
         .onAppear{
