@@ -47,7 +47,7 @@ class ShareViewController: UIViewController, ShareViewDelegate {
         print(userDefaults?.string(forKey: key) as Any)
         searchItem = Search(text: (userDefaults?.string(forKey: key))!, delegate: self)
         DispatchQueue.main.async{
-            let waitingRoomView = UIHostingController(rootView: WaitingRoomView(item: self.searchItem!))
+            let waitingRoomView = UIHostingController(rootView: WaitingRoomView(item: self.searchItem!, isRootViewActive: .constant(false)))
             self.addChild(waitingRoomView)
             waitingRoomView.view.translatesAutoresizingMaskIntoConstraints = false
             
@@ -67,7 +67,7 @@ class ShareViewController: UIViewController, ShareViewDelegate {
     
     func changeView() {
         print("Changed View")
-        let resultView = UIHostingController(rootView: ResultView(item: searchItem!))
+        let resultView = UIHostingController(rootView: ResultView(item: searchItem!, isRootViewActive: .constant(false)))
         self.addChild(resultView)
         resultView.view.translatesAutoresizingMaskIntoConstraints = false
         

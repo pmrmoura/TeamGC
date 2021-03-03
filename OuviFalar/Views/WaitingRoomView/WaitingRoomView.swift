@@ -9,14 +9,15 @@ import SwiftUI
 
 struct WaitingRoomView: View {
     @ObservedObject var item: Search
-    
+    @Binding var isRootViewActive: Bool
     var body: some View {
         VStack{
             NavigationLink(
-                destination: ResultView(item: item),
+                destination: ResultView(item: item, isRootViewActive: $isRootViewActive),
                 isActive: $item.isConcluded){
                     EmptyView()
                 }
+            .isDetailLink(false)
             
             HStack {
                 Text("Estamos procurando...")
@@ -76,6 +77,6 @@ struct WaitingRoomView: View {
 
 struct WaitingRoomView_Previews: PreviewProvider {
     static var previews: some View {
-        WaitingRoomView(item: Search(text: "Cloroquina mata"))
+        WaitingRoomView(item: Search(text: "Cloroquina mata"), isRootViewActive: .constant(false))
     }
 }
