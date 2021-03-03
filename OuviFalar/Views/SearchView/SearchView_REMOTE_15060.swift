@@ -38,6 +38,7 @@ struct SearchView: View {
             }
             .modifier(PickerStackModifier(isPickerShown: $isPickerShown))
         }
+        .modifier(NavigationViewModifier())
         .onAppear(perform: {
             searchText = ""
         })
@@ -85,7 +86,7 @@ struct SearchBox: View {
         }
         .padding(.top)
         .disabled(searchText.isEmpty)
-        .navigationTitle("Pesquisa")
+
         Spacer()
     }
 }

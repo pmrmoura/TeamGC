@@ -25,9 +25,7 @@ struct MotherView : View {
         }
         .environmentObject(toggle)
         .navigationBarTitle("") //this must be empty
-        .navigationBarHidden(true)
         .navigationBarBackButtonHidden(true)
-        .edgesIgnoringSafeArea([.top, .bottom])
     }
 }
 

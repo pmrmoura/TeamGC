@@ -38,9 +38,14 @@ struct SearchView: View {
             }
             .modifier(PickerStackModifier(isPickerShown: $isPickerShown))
         }
+<<<<<<< HEAD
+
+=======
+        .modifier(NavigationViewModifier())
         .onAppear(perform: {
             searchText = ""
         })
+>>>>>>> 7492b6e1d3e59ab02c23b96d8aa3e1f98bda41cd
     }
     
 }
@@ -72,9 +77,13 @@ struct SearchBox: View {
             .border(Color(.systemGray3))
             .padding(.horizontal)
             .frame(height: 300)
+<<<<<<< HEAD
+        NavigationLink(destination: WaitingRoomView(item: Search(text: searchText))){
+=======
             
         NavigationLink(
             destination: WaitingRoomView(item: Search(text: searchText), isRootViewActive: $isRootViewActive), isActive: $isRootViewActive) {
+>>>>>>> 7492b6e1d3e59ab02c23b96d8aa3e1f98bda41cd
             Text("Checar")
                 .padding()
                 .padding(.horizontal, 40)
@@ -85,7 +94,12 @@ struct SearchBox: View {
         }
         .padding(.top)
         .disabled(searchText.isEmpty)
-        .navigationTitle("Pesquisa")
+<<<<<<< HEAD
+        .navigationBarTitle("Pesquisa")
+        .navigationBarBackButtonHidden(true)
+=======
+
+>>>>>>> 7492b6e1d3e59ab02c23b96d8aa3e1f98bda41cd
         Spacer()
     }
 }
