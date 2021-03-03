@@ -17,6 +17,7 @@ struct WaitingRoomView: View {
                 isActive: $item.isConcluded){
                     EmptyView()
                 }
+            .navigationBarBackButtonHidden(true)
             
             HStack {
                 Text("Estamos procurando...")

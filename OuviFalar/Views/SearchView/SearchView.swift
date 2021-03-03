@@ -18,8 +18,23 @@ struct SearchView: View {
     let textField = UITextView()
     
     var body: some View {
+        
+        
         ZStack(alignment: .bottom){
             VStack{
+                HStack(){
+                    
+                Text("Pesquisa")
+                    .font(.largeTitle)
+                    .fontWeight(.bold)
+                    .multilineTextAlignment(.leading)
+                    .padding(.leading)
+                    
+                Spacer()
+                    
+                }
+            
+                
                 SelectCategory(isPickerShown: $isPickerShown, selectedCategory: $selectedCategory, category: category)
                 Spacer()
                 SearchBox(searchText: $searchText)
@@ -37,7 +52,7 @@ struct SearchView: View {
             }
             .modifier(PickerStackModifier(isPickerShown: $isPickerShown))
         }
-        .modifier(NavigationViewModifier())
+
     }
     
 }
@@ -79,6 +94,8 @@ struct SearchBox: View {
         }
         .padding(.top)
         .disabled(searchText.isEmpty)
+//        .navigationBarHidden(true)
+        .navigationBarBackButtonHidden(true)
         Spacer()
     }
 }
