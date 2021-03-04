@@ -71,7 +71,7 @@ struct SearchBox: View {
             .cornerRadius(5)
             .border(Color(.systemGray3))
             .padding(.horizontal)
-            .frame(height: 300)
+//            .frame(height: 300)
             
         NavigationLink(
             destination: WaitingRoomView(item: Search(text: searchText), isRootViewActive: $isRootViewActive), isActive: $isRootViewActive) {
@@ -87,6 +87,7 @@ struct SearchBox: View {
         .padding(.top)
         .disabled(searchText.isEmpty)
         .navigationTitle("Pesquisa")
+        .navigationBarBackButtonHidden(true)
         Spacer()
     }
 }
